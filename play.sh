@@ -17,21 +17,21 @@ case $game_choice in
         ;;
     2)
         echo ""
-        echo "Starting Hangman..."
-        echo ""
-        node hangman.js
-        ;;
-    3)
-        echo ""
         echo "Starting Tic Tac Toe..."
         echo ""
         node tic-tac-toe.js
         ;;
-    4)
+    3)
         echo ""
         echo "Starting Wordle..."
         echo ""
         node wordle.js
+        ;;
+    4)
+        echo ""
+        echo "Starting Trivia..."
+        echo ""
+        node trivia.js
         ;;
     *)
         echo "❌ Invalid choice. Please select a number between 1 and 4."
