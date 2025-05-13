@@ -2,9 +2,9 @@
 
 echo "🎮 Available Games:"
 echo "1. Connect Four"
-echo "2. Hangman"
-echo "3. Tic Tac Toe"
-echo "4. Wordle"
+echo "2. Tic Tac Toe"
+echo "3. Wordle"
+echo "4. Trivia"
 
 read -p "Choose a game (1-4): " game_choice
 
