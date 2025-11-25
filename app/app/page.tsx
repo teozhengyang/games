@@ -83,7 +83,6 @@ export default function Home() {
                             key={game.title}
                             title={game.title}
                             description={game.description}
-                            icon={game.icon}
                             href={game.href}
                             delay={index * 0.1}
                         />
