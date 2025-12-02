@@ -6,7 +6,7 @@ import { GameBoard } from "./components/GameBoard";
 import { ScoreBoard } from "./components/ScoreBoard";
 import { useGameState } from "./hooks/useGameState";
 import { useAI } from "./hooks/useAI";
-import { calculateWinnerAndLine } from "./GameLogic";
+import { calculateWinnerAndLine } from "./game-logic";
 
 export default function TicTacToePage() {
     // store game state handlers

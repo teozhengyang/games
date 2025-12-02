@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Board, Player, GameMode } from "../types";
-import { findBestMove } from "../GameLogic";
+import { findBestMove } from "../game-logic";
 
 interface UseAIProps {
     board: Board;

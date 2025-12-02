@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { Board, Player, Scores, GameMode } from "../types";
-import { calculateWinnerAndLine } from "../GameLogic";
+import { calculateWinnerAndLine } from "../game-logic";
 
 export function useGameState() {
     // state variables (board, current player, scores, game mode)
