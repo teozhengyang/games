@@ -14,16 +14,16 @@ export function GameControls({ winner, isCurrX, gameMode, onToggleMode }: GameCo
         <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-8 flex flex-col md:flex-row gap-4 w-full max-w-3xl"
+        className="mb-10 flex flex-col md:flex-row gap-4 w-full max-w-3xl"
         >
             <Link href="/" className="flex-1">
                 <button className="w-full px-6 py-3 rounded-xl bg-zinc-800 text-white font-medium hover:bg-zinc-700 transition-all duration-300 border border-zinc-700">
-                Return to Games
+                    Return to Games
                 </button>
             </Link>
             
             <div className="flex-1">
-                <div className="w-full px-6 py-3 rounded-xl bg-zinc-800/80 backdrop-blur-sm border border-zinc-700/50 text-center">
+                <div className="w-full px-6 py-3 rounded-xl bg-black/70 backdrop-blur-sm border-2 border-purple-500/30 text-center">
                     <AnimatePresence mode="wait">
                         {winner ? (
                             <motion.div
@@ -36,7 +36,7 @@ export function GameControls({ winner, isCurrX, gameMode, onToggleMode }: GameCo
                                 {winner === "draw" ? (
                                     <span className="text-yellow-400">Draw!</span>
                                     ) : (
-                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-400">
                                         {winner} Wins!
                                     </span>
                                 )}
@@ -61,7 +61,7 @@ export function GameControls({ winner, isCurrX, gameMode, onToggleMode }: GameCo
             
             <button
                 onClick={onToggleMode}
-                className="flex-1 px-6 py-3 rounded-xl bg-zinc-800 text-white font-medium hover:bg-zinc-700 transition-all duration-300 border border-zinc-700"
+                className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold hover:from-cyan-600 hover:to-pink-600 transition-all duration-300 shadow-lg"
             >
                 Mode: {gameMode === "pvp" ? "PvP" : "AI"}
             </button>

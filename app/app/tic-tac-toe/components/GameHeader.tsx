@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { HeroHighlight } from "@/app/components/ui/HeroHighlight";
 
 export function GameHeader() {
     return (
@@ -6,17 +7,21 @@ export function GameHeader() {
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
+                className="text-4xl md:text-7xl font-black"
             >
-                Tic-Tac-Toe
+                <HeroHighlight>
+                    <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                        TIC-TAC-TOE
+                    </span>
+                </HeroHighlight>
             </motion.h1>
             <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="mt-4 font-normal text-base text-neutral-300 max-w-lg mx-auto"
+                className="mt-4 font-light text-base text-cyan-300 tracking-[0.25em] max-w-lg mx-auto"
             >
-                Challenge your friends or agent to a game
+                PLAY SMART. PLAY FUN.
             </motion.p>
         </div>
     );

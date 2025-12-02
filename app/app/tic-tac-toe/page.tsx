@@ -38,13 +38,22 @@ export default function TicTacToePage() {
     };
 
     return (
-        <div className="min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-            <div className="relative z-10 w-full pt-20 pb-20">
+        <div className="min-h-screen bg-black text-white overflow-hidden relative">
+            <div className="fixed inset-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-pink-900/20" />
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" />
+                <div
+                    className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                />
+            </div>
+
+            <div className="relative z-10 container mx-auto px-4 py-12">
                 {/* Header */}
                 <GameHeader />
 
-                <div className="flex flex-col items-center justify-center px-4">
-                    {/* Game Controls */}
+                {/* Controls */}
+                <div className="flex flex-col items-center justify-center">
                     <GameControls
                         winner={winner}
                         isCurrX={isCurrX}
@@ -52,8 +61,9 @@ export default function TicTacToePage() {
                         onToggleMode={toggleGameMode}
                     />
 
+                    {/* Main content: board + scoreboard */}
                     <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
-                        {/* Game Board */}
+                        {/* Simple board without neon wrappers/lines */}
                         <GameBoard
                             board={board}
                             winner={winner}
@@ -61,7 +71,7 @@ export default function TicTacToePage() {
                             onCellClick={handleClick}
                         />
 
-                        {/* Score Board */}
+                        {/* Simple scoreboard without neon wrappers/lines */}
                         <ScoreBoard
                             scores={scores}
                             gameMode={gameMode}
@@ -71,9 +81,6 @@ export default function TicTacToePage() {
                     </div>
                 </div>
             </div>
-
-            {/* Background Grid */}
-            <div className="absolute inset-0 bg-grid-white/[0.02] pointer-events-none" />
-    </div>
-  );
+        </div>
+    );
 }
