@@ -1,106 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Gamepad2, Sparkles, Zap, Trophy } from "lucide-react";
-
-// Background beams
-const BackgroundBeams = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(5)].map((_, i) => (
-            <div
-                key={i}
-                className="absolute h-full w-px bg-gradient-to-b from-transparent via-cyan-500 to-transparent"
-                style={{
-                    left: `${20 + i * 20}%`,
-                    animationDelay: `${i * 0.5}s`,
-                    animation: "beam 8s linear infinite",
-                }}
-            />
-        ))}
-        <style>{`
-            @keyframes beam {
-            0%, 100% { opacity: 0; transform: translateY(-100%); }
-            50% { opacity: 1; transform: translateY(100%); }
-            }
-        `}</style>
-    </div>
-  );
-};
-
-// Spotlight card with mouse effect
-type SpotlightCardProps = {
-    children?: React.ReactNode;
-    className?: string;
-};
-
-const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className = "" }) => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        });
-    };
-
-    return (
-        <div
-            className={`relative ${className}`}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            {isHovered && (
-                <div
-                    className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-                    style={{
-                        background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(6, 182, 212, 0.15), transparent 40%)`,
-                    }}
-                />
-            )}
-            {children}
-        </div>
-    );
-};
-
-// Neon flicker border for hero card
-type NeonBorderProps = {
-    children?: React.ReactNode;
-    className?: string;
-};
-
-const NeonBorder = ({ children, className = "" }: NeonBorderProps) => {
-    return (
-        <div className={`relative ${className}`}>
-            <div className="absolute -inset-[2px] rounded-xl bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 opacity-80 blur-[6px] animate-flicker" />
-            <div className="relative bg-black rounded-xl overflow-hidden border-2 border-cyan-400/50">
-                {children}
-            </div>
-            <style>{`
-                @keyframes flicker {
-                0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-                20%, 22%, 24%, 55% { opacity: 0.4; }
-                }
-                .animate-flicker {
-                animation: flicker 2s infinite;
-                }
-            `}</style>
-        </div>
-    );
-};
-
-// Hero gradient highlight
-const HeroHighlight = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-pink-500/20 to-purple-500/20 blur-3xl" />
-            {children}
-        </div>
-    );
-};
+import { BackgroundBeams } from "@/app/components/ui/BackgroundBeams";
+import { SpotlightCard } from "@/app/components/ui/SpotlightCard";
+import { NeonBorder } from "@/app/components/ui/NeonBorder";
+import { HeroHighlight } from "@/app/components/ui/HeroHighlight";
 
 export default function Home() {
     const quote = {
