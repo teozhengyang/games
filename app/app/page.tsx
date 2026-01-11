@@ -18,6 +18,7 @@ export default function Home() {
                 { title: "Chinese Chess", description: "Xiangqi battles", href: "/chinese-chess" },
                 { title: "Chess", description: "Checkmate the king", href: "/chess" },
                 { title: "Reversi", description: "Flip to dominate", href: "/reversi" },
+                { title: "Snakes and Ladders", description: "Climb and slide", href: "/snakes-and-ladders" },
             ],
         },
         {
@@ -30,10 +31,6 @@ export default function Home() {
                 { title: "Wordle", description: "Guess the word", href: "/wordle" },
                 { title: "Trivia", description: "Test knowledge", href: "/trivia" },
                 { title: "Solitaire", description: "Card patience", href: "/solitaire" },
-                { title: "Uno", description: "Color card fun", href: "/uno" },
-                { title: "Hangman", description: "Guess letters", href: "/hangman" },
-                { title: "Wheels of Fortune", description: "Spin and solve", href: "/wheels-of-fortune" },
-                { title: "Word Hunt", description: "Fast word find", href: "/word-hunt" },
             ],
         },
         {
